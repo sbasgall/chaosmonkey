@@ -55,7 +55,9 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 	// As trackers are contributed to the open source project, they should
 	// be instantiated here
   case "slack":
-
+		type slackobj struct {
+		  tracker Tracker
+		}
 //		}
 //		params.Attachments = []slack.Attachment{attachment}
 //		channelID, timestamp, err := api.PostMessage("CHANNEL_ID", "Some text", params)
@@ -64,19 +66,19 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 //		}
 //		fmt.Printf("Message successfully sent to channel %s at %s", channelID, timestamp)
 	  fmt.Println("slack")
-		return tr, errors.Errorf("unkown error 2")
+		return slackobj.tracker, errors.Errorf("unkown error 2")
 
 	default:
 		return nil, errors.Errorf("unsupported tracker: %s", kind)
 	}
 }
 
-func (tr chaosmonkey.Tracker) Track(t Termination) {
+//func (tr chaosmonkey.Tracker) Track(t Termination) {
 	//	  api := slack.New("YOUR_TOKEN_HERE")
 	//		params := slack.PostMessageParameters{}
 	//		attachment := slack.Attachment{
 	//			Pretext: "some pretext",
 	//			Text:    "some text",
-	fmt.Println("TRACKER\n\n")
-	fmt.Println(tr)
-}
+//	fmt.Println("TRACKER\n\n")
+//	fmt.Println(tr)
+//}
