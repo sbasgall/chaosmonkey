@@ -105,6 +105,12 @@
 			"revisionTime": "2016-08-08T11:12:53-07:00"
 		},
 		{
+			"checksumSHA1": "gfZcDHrsjNfvWFOFhiEdL+Kmszw=",
+			"path": "github.com/nlopes/slack",
+			"revision": "372b354625964a2a904e54b2889cb01a69f4dfb3",
+			"revisionTime": "2018-05-07T05:25:18Z"
+		},
+		{
 			"checksumSHA1": "8Y05Pz7onrQPcVWW6JStSsYRh6E=",
 			"path": "github.com/pelletier/go-buffruneio",
 			"revision": "df1e16fde7fc330a0ca68167c23bf7ed6ac31d6d",
@@ -249,5 +255,5 @@
 			"revisionTime": "2016-09-12T19:56:03+03:00"
 		}
 	],
-	"rootPath": "github.com/Netflix/chaosmonkey"
+	"rootPath": "github.com/sbasgall/chaosmonkey"
 }
