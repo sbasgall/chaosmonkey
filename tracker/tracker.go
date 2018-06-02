@@ -55,15 +55,6 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 	// As trackers are contributed to the open source project, they should
 	// be instantiated here
   case "slack":
-		func (tr Tracker) Track(t Termination) {
-			//	  api := slack.New("YOUR_TOKEN_HERE")
-			//		params := slack.PostMessageParameters{}
-			//		attachment := slack.Attachment{
-			//			Pretext: "some pretext",
-			//			Text:    "some text",
-    	fmt.Println("TRACKER\n\n")
-			fmt.Println(tr)
-    }
 
 //		}
 //		params.Attachments = []slack.Attachment{attachment}
@@ -78,4 +69,14 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 	default:
 		return nil, errors.Errorf("unsupported tracker: %s", kind)
 	}
+}
+
+func (tr Tracker) Track(t Termination) {
+	//	  api := slack.New("YOUR_TOKEN_HERE")
+	//		params := slack.PostMessageParameters{}
+	//		attachment := slack.Attachment{
+	//			Pretext: "some pretext",
+	//			Text:    "some text",
+	fmt.Println("TRACKER\n\n")
+	fmt.Println(tr)
 }
