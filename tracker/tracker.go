@@ -59,10 +59,7 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 		  tracker chaosmonkey.Tracker
 		}
 
-	func (s *SlackObject) track() {
-			fmt.Println("inside")
-  return i.token.Type()
-}
+
 //		}
 //		params.Attachments = []slack.Attachment{attachment}
 //		channelID, timestamp, err := api.PostMessage("CHANNEL_ID", "Some text", params)
@@ -78,6 +75,9 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 	}
 }
 
+func (s *SlackObject) track() {
+		fmt.Println("inside")
+}
 //func (tr chaosmonkey.Tracker) Track(t Termination) {
 	//	  api := slack.New("YOUR_TOKEN_HERE")
 	//		params := slack.PostMessageParameters{}
