@@ -56,23 +56,15 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 	// be instantiated here
   case "slack":
 		func (tr Tracker) Track(t Termination) {
+			//	  api := slack.New("YOUR_TOKEN_HERE")
+			//		params := slack.PostMessageParameters{}
+			//		attachment := slack.Attachment{
+			//			Pretext: "some pretext",
+			//			Text:    "some text",
     	fmt.Println("TRACKER\n\n")
 			fmt.Println(tr)
     }
-//	  api := slack.New("YOUR_TOKEN_HERE")
-//		params := slack.PostMessageParameters{}
-//		attachment := slack.Attachment{
-//			Pretext: "some pretext",
-//			Text:    "some text",
-			// Uncomment the following part to send a field too
-			/*
-				Fields: []slack.AttachmentField{
-					slack.AttachmentField{
-						Title: "a",
-						Value: "no",
-					},
-				},
-			*/
+
 //		}
 //		params.Attachments = []slack.Attachment{attachment}
 //		channelID, timestamp, err := api.PostMessage("CHANNEL_ID", "Some text", params)
@@ -81,10 +73,6 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 //		}
 //		fmt.Printf("Message successfully sent to channel %s at %s", channelID, timestamp)
 	  fmt.Println("slack")
-//		func slackTracker(t chaosmonkey.Tracker) {
-//			return t
-//		}
-//    var tt chaosmonkey.Tracker
 		return tr, errors.Errorf("unkown error 2")
 
 	default:
