@@ -74,7 +74,6 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 		channelID, timestamp, err := api.PostMessage("CHANNEL_ID", "Some text", params)
 		if err != nil {
 			fmt.Printf("%s\n", err)
-			return
 		}
 		fmt.Printf("Message successfully sent to channel %s at %s", channelID, timestamp)
 	  fmt.Println("slack")
