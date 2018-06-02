@@ -17,9 +17,9 @@ package term
 import (
 	"testing"
 
-	"github.com/Netflix/chaosmonkey"
-	D "github.com/Netflix/chaosmonkey/deploy"
-	"github.com/Netflix/chaosmonkey/grp"
+	"github.com/sbasgall/chaosmonkey"
+	D "github.com/sbasgall/chaosmonkey/deploy"
+	"github.com/sbasgall/chaosmonkey/grp"
 )
 
 // mockApp returns a deploy.App object mock for testing

@@ -37,7 +37,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Netflix/chaosmonkey/mysql"
+	"github.com/sbasgall/chaosmonkey/mysql"
 	"github.com/pkg/errors"
 )
 

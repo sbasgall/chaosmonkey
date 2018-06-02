@@ -18,10 +18,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Netflix/chaosmonkey"
-	"github.com/Netflix/chaosmonkey/deploy"
-	"github.com/Netflix/chaosmonkey/grp"
-	"github.com/Netflix/chaosmonkey/term"
+	"github.com/sbasgall/chaosmonkey"
+	"github.com/sbasgall/chaosmonkey/deploy"
+	"github.com/sbasgall/chaosmonkey/grp"
+	"github.com/sbasgall/chaosmonkey/term"
 )
 
 // Eligible prints out a list of instance ids eligible for termination

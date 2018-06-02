@@ -18,7 +18,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/Netflix/chaosmonkey"
+	"github.com/sbasgall/chaosmonkey"
 
 	"github.com/pkg/errors"
 )

@@ -24,10 +24,10 @@ import (
 	"sort"
 	"time"
 
-	"github.com/Netflix/chaosmonkey"
-	"github.com/Netflix/chaosmonkey/config"
-	"github.com/Netflix/chaosmonkey/deploy"
-	"github.com/Netflix/chaosmonkey/grp"
+	"github.com/sbasgall/chaosmonkey"
+	"github.com/sbasgall/chaosmonkey/config"
+	"github.com/sbasgall/chaosmonkey/deploy"
+	"github.com/sbasgall/chaosmonkey/grp"
 )
 
 // Populate populates the termination schedule with the random

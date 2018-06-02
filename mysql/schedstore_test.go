@@ -26,10 +26,10 @@ import (
 
 	_ "github.com/go-sql-driver/mysql"
 
-	"github.com/Netflix/chaosmonkey/grp"
-	"github.com/Netflix/chaosmonkey/mysql"
-	"github.com/Netflix/chaosmonkey/schedstore"
-	"github.com/Netflix/chaosmonkey/schedule"
+	"github.com/sbasgall/chaosmonkey/grp"
+	"github.com/sbasgall/chaosmonkey/mysql"
+	"github.com/sbasgall/chaosmonkey/schedstore"
+	"github.com/sbasgall/chaosmonkey/schedule"
 )
 
 // Test we can publish and then retrieve a schedule

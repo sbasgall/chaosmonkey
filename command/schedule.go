@@ -21,11 +21,11 @@ import (
 	"os"
 	"time"
 
-	"github.com/Netflix/chaosmonkey"
-	"github.com/Netflix/chaosmonkey/config"
-	"github.com/Netflix/chaosmonkey/deploy"
-	"github.com/Netflix/chaosmonkey/schedstore"
-	"github.com/Netflix/chaosmonkey/schedule"
+	"github.com/sbasgall/chaosmonkey"
+	"github.com/sbasgall/chaosmonkey/config"
+	"github.com/sbasgall/chaosmonkey/deploy"
+	"github.com/sbasgall/chaosmonkey/schedstore"
+	"github.com/sbasgall/chaosmonkey/schedule"
 )
 
 // Schedule executes the "schedule" command. This defines the schedule
