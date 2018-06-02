@@ -59,9 +59,9 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 		  tracker chaosmonkey.Tracker
 		}
 
-	func (s *SlackObject.tracker) track() {
+	  func (s *SlackObject.tracker) track() {
 			fmt.Println("inside")
-  }
+    }
 //		}
 //		params.Attachments = []slack.Attachment{attachment}
 //		channelID, timestamp, err := api.PostMessage("CHANNEL_ID", "Some text", params)
