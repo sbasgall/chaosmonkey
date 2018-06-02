@@ -19,6 +19,7 @@ import (
 	"github.com/sbasgall/chaosmonkey"
 	"github.com/sbasgall/chaosmonkey/config"
 	"github.com/sbasgall/chaosmonkey/deps"
+	"github.com/nlopes/slack"
 	"github.com/pkg/errors"
 )
 
@@ -51,6 +52,8 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 	switch kind {
 	// As trackers are contributed to the open source project, they should
 	// be instantiated here
+case "slack":
+	  fmt.Println("slack")
 	default:
 		return nil, errors.Errorf("unsupported tracker: %s", kind)
 	}
