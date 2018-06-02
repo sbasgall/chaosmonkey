@@ -71,7 +71,7 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 	}
 }
 
-func (tr Tracker) Track(t Termination) {
+func (tr chaosmonkey.Tracker) Track(t Termination) {
 	//	  api := slack.New("YOUR_TOKEN_HERE")
 	//		params := slack.PostMessageParameters{}
 	//		attachment := slack.Attachment{
