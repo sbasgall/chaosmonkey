@@ -21,7 +21,7 @@ import (
 	"github.com/sbasgall/chaosmonkey"
 	"github.com/sbasgall/chaosmonkey/config"
 	"github.com/sbasgall/chaosmonkey/deps"
-	"github.com/nlopes/slack"
+//	"github.com/nlopes/slack"
 	"github.com/pkg/errors"
 )
 
@@ -55,11 +55,11 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 	// As trackers are contributed to the open source project, they should
 	// be instantiated here
   case "slack":
-	  api := slack.New("YOUR_TOKEN_HERE")
-		params := slack.PostMessageParameters{}
-		attachment := slack.Attachment{
-			Pretext: "some pretext",
-			Text:    "some text",
+//	  api := slack.New("YOUR_TOKEN_HERE")
+//		params := slack.PostMessageParameters{}
+//		attachment := slack.Attachment{
+//			Pretext: "some pretext",
+//			Text:    "some text",
 			// Uncomment the following part to send a field too
 			/*
 				Fields: []slack.AttachmentField{
@@ -69,19 +69,19 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 					},
 				},
 			*/
-		}
-		params.Attachments = []slack.Attachment{attachment}
-		channelID, timestamp, err := api.PostMessage("CHANNEL_ID", "Some text", params)
-		if err != nil {
-			fmt.Printf("%s\n", err)
-		}
-		fmt.Printf("Message successfully sent to channel %s at %s", channelID, timestamp)
-	  fmt.Println("slack")
+//		}
+//		params.Attachments = []slack.Attachment{attachment}
+//		channelID, timestamp, err := api.PostMessage("CHANNEL_ID", "Some text", params)
+//		if err != nil {
+//			fmt.Printf("%s\n", err)
+//		}
+//		fmt.Printf("Message successfully sent to channel %s at %s", channelID, timestamp)
+//	  fmt.Println("slack")
 //		func slackTracker(t chaosmonkey.Tracker) {
 //			return t
 //		}
     var tt chaosmonkey.Tracker
-		return tt, errors.Errorf("unkown error")
+		return tt, errors.Errorf("unkown error 2")
 
 	default:
 		return nil, errors.Errorf("unsupported tracker: %s", kind)
