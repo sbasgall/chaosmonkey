@@ -76,7 +76,7 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 //			fmt.Printf("%s\n", err)
 //		}
 //		fmt.Printf("Message successfully sent to channel %s at %s", channelID, timestamp)
-//	  fmt.Println("slack")
+	  fmt.Println("slack")
 //		func slackTracker(t chaosmonkey.Tracker) {
 //			return t
 //		}
