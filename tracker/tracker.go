@@ -71,7 +71,7 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 //		}
 //		fmt.Printf("Message successfully sent to channel %s at %s", channelID, timestamp)
 	  fmt.Println("slack")
-		return slackobj{tracker}, errors.Errorf("unkown error 2")
+		return SlackObject{tracker}, errors.Errorf("unkown error 2")
 
 	default:
 		return nil, errors.Errorf("unsupported tracker: %s", kind)
