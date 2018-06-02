@@ -57,7 +57,10 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
   case "slack":
 	  api := slack.New("YOUR_TOKEN_HERE")
 	  fmt.Println("slack")
-		return "slack", errors.Errorf("unkown error")
+		func slackTracker(t chaosmonkey.Tracker) {
+			return t
+		}
+		return slackTracker(), errors.Errorf("unkown error")
 
 	default:
 		return nil, errors.Errorf("unsupported tracker: %s", kind)
