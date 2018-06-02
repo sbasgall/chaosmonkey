@@ -56,7 +56,7 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 	// be instantiated here
   case "slack":
 		type slackobj struct {
-		  tracker Tracker
+		  tracker chaosmonkey.Tracker
 		}
 //		}
 //		params.Attachments = []slack.Attachment{attachment}
