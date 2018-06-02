@@ -16,6 +16,8 @@
 package tracker
 
 import (
+	"fmt"
+
 	"github.com/sbasgall/chaosmonkey"
 	"github.com/sbasgall/chaosmonkey/config"
 	"github.com/sbasgall/chaosmonkey/deps"
@@ -55,7 +57,7 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 case "slack":
 	api := slack.New("YOUR_TOKEN_HERE")
 	fmt.Println("slack")
-	
+
 	default:
 		return nil, errors.Errorf("unsupported tracker: %s", kind)
 	}
