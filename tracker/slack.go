@@ -31,28 +31,21 @@ type SlackObject struct {}
 // Track is a great function
 func (s *SlackObject) Track(chaosmonkey.Termination) error {
 	fmt.Println("inside")
-	api := slack.New(os.Getenv("SLACK_TOKEN"))
-	params := slack.PostMessageParameters{}
-	attachment := slack.Attachment{
-		Pretext: "some pretext",
-		Text:    "some text",
-		// Uncomment the following part to send a field too
-		/*
-			Fields: []slack.AttachmentField{
-				slack.AttachmentField{
-					Title: "a",
-					Value: "no",
-				},
-			},
-		*/
-	}
-	params.Attachments = []slack.Attachment{attachment}
-	channelID, timestamp, err := api.PostMessage("custodian", "Some text", params)
-	if err != nil {
-			fmt.Printf("%s\n", err)
-			return errors.Errorf("slack api post failed")
-	}
-	fmt.Printf("Message successfully sent to channel %s at %s", channelID, timestamp)
 
+	webhookURL := os.Getenv("SLACK_WEBHOOK")
+
+	    attachment1 := slack.Attachment {}
+	    attachment1.AddField(slack.Field { Title: "Chaos Termination", Value: "Yes" }).AddField(slack.Field { Title: "Status", Value: "Completed" })
+	    payload := slack.Payload {
+	      Text: "Hello from <https://github.com/ashwanthkumar/slack-go-webhook|slack-go-webhook>, a Go-Lang library to send slack webhook messages.\n<https://golangschool.com/wp-content/uploads/golang-teach.jpg|golang-img>",
+	      Username: "custodian",
+	      Channel: "#custodian",
+	      IconEmoji: ":monkey_face:",
+	      Attachments: []slack.Attachment{attachment1},
+	    }
+	    err := slack.Send(webhookURL, "", payload)
+	    if len(err) > 0 {
+	      fmt.Printf("error: %s\n", err)
+	    }
 	return nil
 }
