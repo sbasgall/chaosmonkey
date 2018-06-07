@@ -19,34 +19,40 @@ import (
 	"fmt"
 
 	"github.com/sbasgall/chaosmonkey"
-//	"github.com/nlopes/slack"
+	"github.com/sbasgall/chaosmonkey/config"
+	"github.com/nlopes/slack"
 	"github.com/pkg/errors"
 )
 
+var slacktracker chaosmonkey.Tracker
 // SlackObject yes
 type SlackObject struct {}
 
 // Track is a great function
 func (s *SlackObject) Track(chaosmonkey.Termination) error {
 	fmt.Println("inside")
-	return errors.Errorf("unkown error override!!!")
+	api := slack.New(os.Getenv("SLACK_TOKEN"))
+	params := slack.PostMessageParameters{}
+	attachment := slack.Attachment{
+		Pretext: "some pretext",
+		Text:    "some text",
+		// Uncomment the following part to send a field too
+		/*
+			Fields: []slack.AttachmentField{
+				slack.AttachmentField{
+					Title: "a",
+					Value: "no",
+				},
+			},
+		*/
+	}
+	params.Attachments = []slack.Attachment{attachment}
+	channelID, timestamp, err := api.PostMessage("custodian", "Some text", params)
+	if err != nil {
+			fmt.Printf("%s\n", err)
+			return
+	}
+	fmt.Printf("Message successfully sent to channel %s at %s", channelID, timestamp)
+
+	return nil
 }
-
-var slacktracker chaosmonkey.Tracker
-
-
-//func (tr chaosmonkey.Tracker) Track(t Termination) {
-	//	  api := slack.New("YOUR_TOKEN_HERE")
-	//		params := slack.PostMessageParameters{}
-	//		attachment := slack.Attachment{
-	//			Pretext: "some pretext",
-	//			Text:    "some text",
-//	fmt.Println("TRACKER\n\n")
-//	fmt.Println(tr)
-//}
-//		params.Attachments = []slack.Attachment{attachment}
-//		channelID, timestamp, err := api.PostMessage("CHANNEL_ID", "Some text", params)
-//		if err != nil {
-//			fmt.Printf("%s\n", err)
-//		}
-//		fmt.Printf("Message successfully sent to channel %s at %s", channelID, timestamp)
