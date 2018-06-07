@@ -52,6 +52,7 @@ type SlackObject struct {}
 // Track is a great function
 func (s *SlackObject) Track(chaosmonkey.Termination) error {
 	fmt.Println("inside")
+	return errors.Errorf("unkown error override!!!")
 }
 // getTracker returns a tracker by name
 // No trackers have been implemented yet
