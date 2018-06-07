@@ -32,6 +32,7 @@ func (s *SlackObject) Track(chaosmonkey.Termination) error {
 	return errors.Errorf("unkown error override!!!")
 }
 
+var slacktracker chaosmonkey.Tracker
 
 
 //func (tr chaosmonkey.Tracker) Track(t Termination) {

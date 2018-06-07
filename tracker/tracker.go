@@ -54,9 +54,7 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 	// As trackers are contributed to the open source project, they should
 	// be instantiated here
   case "slack":
-    var slacktracker chaosmonkey.Tracker
     slacktracker = &SlackObject{}
-    fmt.Println("slack")
     return slacktracker, nil
 	default:
 		return nil, errors.Errorf("unsupported tracker: %s", kind)
