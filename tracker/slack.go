@@ -25,44 +25,16 @@ import (
 	"github.com/pkg/errors"
 )
 
-func init() {
-	deps.GetTrackers = getTrackers
+// SlackObject yes
+type SlackObject struct {}
+
+// Track is a great function
+func (s *SlackObject) Track(chaosmonkey.Termination) error {
+	fmt.Println("inside")
+	return errors.Errorf("unkown error override!!!")
 }
 
-// getTrackers returns a list of trackers specified in the configuration
-func getTrackers(cfg *config.Monkey) ([]chaosmonkey.Tracker, error) {
-	var result []chaosmonkey.Tracker
 
-	kinds, err := cfg.Trackers()
-	if err != nil {
-		return nil, err
-	}
-
-	for _, kind := range kinds {
-		tr, err := getTracker(kind, cfg)
-		if err != nil {
-			return nil, err
-		}
-		result = append(result, tr)
-	}
-	return result, nil
-}
-
-// getTracker returns a tracker by name
-// No trackers have been implemented yet
-func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
-	switch kind {
-	// As trackers are contributed to the open source project, they should
-	// be instantiated here
-  case "slack":
-    var slacktracker chaosmonkey.Tracker
-    slacktracker = &SlackObject{}
-    fmt.Println("slack")
-    return slacktracker, errors.Errorf("unkown error 3")
-	default:
-		return nil, errors.Errorf("unsupported tracker: %s", kind)
-	}
-}
 
 //func (tr chaosmonkey.Tracker) Track(t Termination) {
 	//	  api := slack.New("YOUR_TOKEN_HERE")
