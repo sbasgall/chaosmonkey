@@ -58,7 +58,7 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 	  type SlackObject struct {
 		  tracker chaosmonkey.Tracker
 		}
-    func (s *SlackObject.tracker) Track(); {
+    func (s *SlackObject.tracker) Track() {
 			fmt.Println("inside")
 		}
 //		params.Attachments = []slack.Attachment{attachment}
