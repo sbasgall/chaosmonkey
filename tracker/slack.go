@@ -17,6 +17,7 @@ package tracker
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/sbasgall/chaosmonkey"
 	"github.com/sbasgall/chaosmonkey/config"
