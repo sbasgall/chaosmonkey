@@ -56,8 +56,9 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 	// be instantiated here
   case "slack":
     type SlackObject struct {}
-		func (s *SlackObject) Track() {
+		func (s *SlackObject) Track() string {
 			fmt.Println("inside")
+			return "inside"
 		}
     var slacktracker = chaostmonkey.Tracker
     slacktracker = &SlackObject{}
