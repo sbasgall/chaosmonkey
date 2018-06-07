@@ -51,7 +51,7 @@ func (s *SlackObject) Track(chaosmonkey.Termination) error {
 	channelID, timestamp, err := api.PostMessage("custodian", "Some text", params)
 	if err != nil {
 			fmt.Printf("%s\n", err)
-			return
+			return err
 	}
 	fmt.Printf("Message successfully sent to channel %s at %s", channelID, timestamp)
 
