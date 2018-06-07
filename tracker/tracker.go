@@ -57,11 +57,11 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
   case "slack":
 		type SlackObject struct {
 		  tracker chaosmonkey.Tracker
-		}
 
     func (s *SlackObject.tracker) Track() {
 			fmt.Println("inside")
     }
+	}
 	}
 //		params.Attachments = []slack.Attachment{attachment}
 //		channelID, timestamp, err := api.PostMessage("CHANNEL_ID", "Some text", params)
