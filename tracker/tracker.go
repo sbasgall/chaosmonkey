@@ -55,9 +55,8 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 	// As trackers are contributed to the open source project, they should
 	// be instantiated here
   case "slack":
-
     type SlackObject struct {}
-		func (s *SlackObject.tracker) Track() {
+		func (s *SlackObject) Track() {
 			fmt.Println("inside")
 		}
     var slacktracker = chaostmonkey.Tracker
