@@ -47,7 +47,12 @@ func getTrackers(cfg *config.Monkey) ([]chaosmonkey.Tracker, error) {
 	}
 	return result, nil
 }
-
+// SlackObject yes
+type SlackObject struct {}
+// Track is a great function
+func (s *SlackObject) Track() {
+	fmt.Println("inside")
+}
 // getTracker returns a tracker by name
 // No trackers have been implemented yet
 func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
@@ -55,15 +60,10 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 	// As trackers are contributed to the open source project, they should
 	// be instantiated here
   case "slack":
-    type SlackObject struct {}
-		func (s *SlackObject) Track() {
-			fmt.Println("inside")
-		}
     var slacktracker chaosmonkey.Tracker
     slacktracker = &SlackObject{}
 	  fmt.Println("slack")
 		return slacktracker, errors.Errorf("unkown error 2")
-
 	default:
 		return nil, errors.Errorf("unsupported tracker: %s", kind)
 	}
