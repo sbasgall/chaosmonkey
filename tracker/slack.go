@@ -45,7 +45,7 @@ func (s *SlackObject) Track(chaosmonkey.Termination) error {
 	    }
 	    err := slack.Send(webhookURL, "", payload)
 	    if len(err) > 0 {
-	      fmt.Printf("error: %s\n", err)
+	      return errors.Errorf("error posting")
 	    }
 	return nil
 }
