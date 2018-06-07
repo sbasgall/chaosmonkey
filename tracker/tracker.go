@@ -21,7 +21,6 @@ import (
 	"github.com/sbasgall/chaosmonkey"
 	"github.com/sbasgall/chaosmonkey/config"
 	"github.com/sbasgall/chaosmonkey/deps"
-//	"github.com/nlopes/slack"
 	"github.com/pkg/errors"
 )
 
@@ -58,24 +57,8 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
     var slacktracker chaosmonkey.Tracker
     slacktracker = &SlackObject{}
     fmt.Println("slack")
-    return slacktracker, errors.Errorf("unkown error 3")
+    return slacktracker, nil
 	default:
 		return nil, errors.Errorf("unsupported tracker: %s", kind)
 	}
 }
-
-//func (tr chaosmonkey.Tracker) Track(t Termination) {
-	//	  api := slack.New("YOUR_TOKEN_HERE")
-	//		params := slack.PostMessageParameters{}
-	//		attachment := slack.Attachment{
-	//			Pretext: "some pretext",
-	//			Text:    "some text",
-//	fmt.Println("TRACKER\n\n")
-//	fmt.Println(tr)
-//}
-//		params.Attachments = []slack.Attachment{attachment}
-//		channelID, timestamp, err := api.PostMessage("CHANNEL_ID", "Some text", params)
-//		if err != nil {
-//			fmt.Printf("%s\n", err)
-//		}
-//		fmt.Printf("Message successfully sent to channel %s at %s", channelID, timestamp)
