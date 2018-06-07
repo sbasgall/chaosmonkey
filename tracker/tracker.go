@@ -59,7 +59,7 @@ func getTracker(kind string, cfg *config.Monkey) (chaosmonkey.Tracker, error) {
 		func (s *SlackObject) Track() {
 			fmt.Println("inside")
 		}
-    var slacktracker chaostmonkey.Tracker
+    var slacktracker chaosmonkey.Tracker
     slacktracker = &SlackObject{}
 	  fmt.Println("slack")
 		return slacktracker, errors.Errorf("unkown error 2")
