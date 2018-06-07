@@ -19,8 +19,6 @@ import (
 	"fmt"
 
 	"github.com/sbasgall/chaosmonkey"
-	"github.com/sbasgall/chaosmonkey/config"
-	"github.com/sbasgall/chaosmonkey/deps"
 //	"github.com/nlopes/slack"
 	"github.com/pkg/errors"
 )
