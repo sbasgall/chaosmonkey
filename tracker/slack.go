@@ -20,7 +20,7 @@ import (
 	"os"
 
 	"github.com/sbasgall/chaosmonkey"
-	"github.com/nlopes/slack"
+	"github.com/ashwanthkumar/slack-go-webhook"
 	"github.com/pkg/errors"
 )
 
