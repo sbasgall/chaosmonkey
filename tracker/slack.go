@@ -20,7 +20,6 @@ import (
 	"os"
 
 	"github.com/sbasgall/chaosmonkey"
-	"github.com/sbasgall/chaosmonkey/config"
 	"github.com/nlopes/slack"
 	"github.com/pkg/errors"
 )
@@ -51,7 +50,7 @@ func (s *SlackObject) Track(chaosmonkey.Termination) error {
 	channelID, timestamp, err := api.PostMessage("custodian", "Some text", params)
 	if err != nil {
 			fmt.Printf("%s\n", err)
-			return err
+			return errors.Errorf("slack api post failed")
 	}
 	fmt.Printf("Message successfully sent to channel %s at %s", channelID, timestamp)
 
