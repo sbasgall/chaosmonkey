@@ -50,7 +50,7 @@ func getTrackers(cfg *config.Monkey) ([]chaosmonkey.Tracker, error) {
 // SlackObject yes
 type SlackObject struct {}
 // Track is a great function
-func (s *SlackObject) Track() {
+func (s *SlackObject) Track(chaosmonkey.Termination) {
 	fmt.Println("inside")
 }
 // getTracker returns a tracker by name
