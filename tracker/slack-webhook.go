@@ -31,11 +31,14 @@ type SlackObject struct {}
 // Track is a great function
 func (s *SlackObject) Track(chaosmonkey.Termination) error {
 	fmt.Println("inside")
+        termtime = fmt.Println(t.Time.Format("2006-01-02 15:04:05"))
+        termleashed = fmt.Println(t.Leashed.Format("%t"))
+        terminstance
 
 	webhookURL := os.Getenv("SLACK_WEBHOOK")
 
 	    attachment1 := slack.Attachment {}
-	    attachment1.AddField(slack.Field { Title: "Chaos Termination", Value: "Yes" }).AddField(slack.Field { Title: "Status", Value: "Completed" })
+	    attachment1.AddField(slack.Field { Title: "Chaos Termination", Value: "Yes" }).AddField(slack.Field { Title: "Time", Value: termtime }).AddField(slack.Field { Title: "App Name", Value: t.Instance.App }).AddField(slack.Field { Title: "Account", Value: t.Instance.Account }).AddField(slack.Field { Title: "Region", Value: t.Instance.Region })
 	    payload := slack.Payload {
 	      Text: "Hello from <https://github.com/ashwanthkumar/slack-go-webhook|slack-go-webhook>, a Go-Lang library to send slack webhook messages.\n<https://golangschool.com/wp-content/uploads/golang-teach.jpg|golang-img>",
 	      Username: "custodian",
