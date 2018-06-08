@@ -31,11 +31,8 @@ type SlackObject struct {}
 // Track is a great function
 func (s *SlackObject) Track(t chaosmonkey.Termination) error {
 	fmt.Println("inside")
-        var termtime string
-        var termtime = fmt.Println(t.Time.Format("2006-01-02 15:04:05")) 
-        var termleashed string
-        termleashed = fmt.Println(t.Leashed.Format("%t"))
-
+        termtime := fmt.Println(t.Time.Format("2006-01-02 15:04:05")) 
+        termleashed := fmt.Println(t.Leashed.Format("%t"))
 	webhookURL := os.Getenv("SLACK_WEBHOOK")
 
 	    attachment1 := slack.Attachment {}
