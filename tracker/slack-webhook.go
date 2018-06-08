@@ -32,7 +32,7 @@ type SlackObject struct {}
 func (s *SlackObject) Track(t chaosmonkey.Termination) error {
 	fmt.Println("inside")
         termtime := fmt.Printf("%v", t.Time)
-        termleashed := fmt.Println(t.Leashed.Format("%t"))
+        termleashed := fmt.Printf("%t", t.Leashed)
 	webhookURL := os.Getenv("SLACK_WEBHOOK")
 
 	    attachment1 := slack.Attachment {}
