@@ -29,7 +29,7 @@ var slacktracker chaosmonkey.Tracker
 type SlackObject struct {}
 
 // Track is a great function
-func (s *SlackObject) Track(chaosmonkey.Termination) error {
+func (s *SlackObject) Track(t chaosmonkey.Termination) error {
 	fmt.Println("inside")
         termtime = fmt.Println(t.Time.Format("2006-01-02 15:04:05"))
         termleashed = fmt.Println(t.Leashed.Format("%t"))
