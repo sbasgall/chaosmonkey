@@ -19,34 +19,35 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sbasgall/chaosmonkey"
 	"github.com/ashwanthkumar/slack-go-webhook"
 	"github.com/pkg/errors"
+	"github.com/sbasgall/chaosmonkey"
 )
 
 var slacktracker chaosmonkey.Tracker
+
 // SlackObject yes
-type SlackObject struct {}
+type SlackObject struct{}
 
 // Track is a great function
 func (s *SlackObject) Track(t chaosmonkey.Termination) error {
-    fmt.Println("inside")
-    termtime := fmt.Printf("%v", t.Time.Now())
-    termleashed := fmt.Printf("%t", t.Leashed)
-    webhookURL := os.Getenv("SLACK_WEBHOOK")
+	fmt.Println("inside")
+	//termtime, err := fmt.Printf("%v", t.Time)
+	//termleashed, err := fmt.Printf("%t", t.Leashed)
+	webhookURL := os.Getenv("SLACK_WEBHOOK")
 
-    attachment1 := slack.Attachment {}
-    attachment1.AddField(slack.Field { Title: "Chaos Termination", Value: "Yes" }).AddField(slack.Field { Title: "Time", Value: termtime }).AddField(slack.Field { Title: "App Name", Value: t.Instance.AppName() }).AddField(slack.Field { Title: "Account", Value: t.Instance.AccountName() }).AddField(slack.Field { Title: "Region", Value: t.Instance.RegionName() })
-    payload := slack.Payload {
-        Text: "Chaos Monkey deletion",
-        Username: "custodian",
-        Channel: "#custodian",
-        IconEmoji: ":monkey_face:",
-        Attachments: []slack.Attachment{attachment1},
-    }
-    err := slack.Send(webhookURL, "", payload)
-    if len(err) > 0 {
-        return errors.Errorf("error posting")
-    }
-    return nil
+	attachment1 := slack.Attachment{}
+	attachment1.AddField(slack.Field{Title: "Chaos Termination", Value: "Yes"}).AddField(slack.Field{Title: "App Name", Value: t.Instance.AppName()}).AddField(slack.Field{Title: "Account", Value: t.Instance.AccountName()}).AddField(slack.Field{Title: "Region", Value: t.Instance.RegionName()})
+	payload := slack.Payload{
+		Text:        "Chaos Monkey deletion",
+		Username:    "custodian",
+		Channel:     "#custodian",
+		IconEmoji:   ":monkey_face:",
+		Attachments: []slack.Attachment{attachment1},
+	}
+	err := slack.Send(webhookURL, "", payload)
+	if len(err) > 0 {
+		return errors.Errorf("error posting")
+	}
+	return nil
 }
